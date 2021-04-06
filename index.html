@@ -72,20 +72,124 @@
   .list-inline .icon-li {
     font-size:2.2rem;
   }
+  .column-2 {
+    float: left;
+    width: 50%;
+    padding: 5px;
+  }
+  .column-3 {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  .column-4 {
+    float: left;
+    width: 25%;
+    padding: 5px;
+  }
+  .image-row {
+    padding: 20px;
+  }
+  #myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  }
+
+  #myImg:hover {
+    opacity: 0.7;
+  }
+
+  .modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+  }
+
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 60%;
+    max-width:60%;
+  }
+
+  #caption {
+    margin: auto;
+    display: block;
+    width: 70%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+  }
+
+  .modal-content,
+  #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+
+  @keyframes zoom {
+    from {
+      transform: scale(0)
+    }
+    to {
+      transform: scale(1)
+    }
+  }
+
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  @media only screen and (max-width: 700px) {
+    .modal-content {
+      width: 100%;
+    }
+  }
+
   </style>
   
-    <script>
+  <script>
     window.console = window.console || function(t) {};
   </script>
-  
     
-    
-    <script>
+  <script>
     if (document.location.search.match(/type=embed/gi)) {
       window.parent.postMessage("resize", "*");
     }
   </script>
-  
   
   </head>
   
@@ -108,6 +212,15 @@
                 <i class="devicon-github-original"></i></a>
               </li>
             </ul>
+            <ul class="list-inline">
+              <li class="icon-li">
+                <a href="#Projects">Projects</a>
+              </li>
+              --
+              <li class="icon-li">
+                Personal
+              </li>
+            </ul>
             <hr>
             <ul class="list-inline">
               <li><i class="devicon-bash-plain"></i></li>
@@ -128,7 +241,7 @@
               I previously worked as a research assistant at <a href="http://w3.cs.bilkent.edu.tr/en/">Bilkent University CS</a>. I was an intern at <a href="https://www.iis.fraunhofer.de/en.html">Fraunhofer Institute for Integrated Circuits IIS</a> and <a href="https://aselsan.com.tr">ASELSAN</a>. I am a graduate of <a href="http://sivasfenlisesi.meb.k12.tr/">Sivas Fen Lisesi</a>. 
               </p>
           </div>
-
+          <hr>
           <!-- summary section -->
           <div class="summary">
             <h2 class="text-center">Interests and R&D Experience</h2>
@@ -163,18 +276,177 @@
             </div>
             
           </div>
+          <hr>
+          <div class="work-experience" id="Projects">
+            <h2 class="text-center">Selected Projects</h2>
 
-        </div>
+            <div class="row experience-title">
+              <div class="col-md-10">
+                <h3>Modeling and Mitigation Online Misinformation</h3>
+                <h4><i>Part of Ph.D. Thesis</i></h4>
+              </div>
+              <div class ="image-row">
+                <div class="column-4">
+                  <img class="myImages" id="myImg" src="images/largenetwork.gif" style="width:100%"/>
+                </div>
+                <div class="column-4">
+                  <img class="myImages" id="myImg" src="images/largenetworkstats.gif" style="width:100%" />
+                </div>
+                <div class="column-4">
+                  <img class="myImages" id="myImg" src="images/smallnetwork.gif" style="width:100%"/>
+                </div>
+                <div class="column-4">
+                  <img class="myImages" id="myImg" src="images/smallnetworkstats.gif" style="width:100%"/>
+                </div>
+              </div>
+            </div>
+           
+            <div class="row experience-title">
+              <div class="summary">
+                <h3>Crowd: a Social Network Simulation Framework</h3>
+                <h4><i>Part of Ph.D. Thesis</i></h4>
+                <h4>Agent based, configurable, extensible framework, under development</h4>
+                <p>Below is a scenario simulated in the framework. Cities are nodes where covid case count is a node property and a world map visualizer is used.</p>
+                <center><img class="myImages" id="myImg" src="images/covid19.gif" style="width:60%;float: none;"/></center>
+              </div>
+              
+              
+            </div>
+            
+            <div class="row experience-title">
+              <div class="col-md-10">
+                <h3>Particle Based Sandstorm Simulation using Statistical Methods</h3>
+                <h4></h4>
+              </div>
+              <div class ="image-row">
+                <div class="column-3">
+                  <img src="images/nostorm.jpg" style="width:100%"/>
+                </div>
+                <div class="column-3">
+                  <img src="images/weakstorm.jpg" style="width:100%" />
+                </div>
+                <div class="column-3">
+                  <img src="images/heavystorm.jpg" style="width:100%"/>
+                </div>
+              </div>
+            </div>
+            
+            <div class="row experience-title">
+              <div class="col-md-10">
+                <h3>3D Character Model Generation using Machine Learning</h3>
+                
+              </div>
+              <div class ="image-row">
+                <div class="column-4">
+                  <img src="images/angle1.png" style="width:100%"/>
+                </div>
+                <div class="column-4">
+                  <img src="images/angle2.png" style="width:100%" />
+                </div>
+                <div class="column-4">
+                  <img src="images/angle3.png" style="width:100%" />
+                </div>
+                <div class="column-4">
+                  <img src="images/angle4.png" style="width:100%" />
+                </div>
+              </div>
+              
+            </div>
+            
+            <div class="row experience-title">
+              <div class="col-md-10">
+                <h3>Deep Learning based Emotion Detection in Entertainment</h3>
+              </div>
+              <div class ="image-row">
+                <div class="column-2">
+                  <img class="myImages" id="myImg" src="images/snap1.png" style="width:100%"/>
+                </div>
+                <div class="column-2">
+                  <img class="myImages" id="myImg" src="images/snap2.png"  style="width:100%" />
+                </div>
+                <div class="column-3">
+                  <img class="myImages" id="myImg" src="images/snap3.png" style="width:100%" />
+                </div>
+                <div class="column-3">
+                  <img class="myImages" id="myImg" src="images/snap4.png" style="width:100%"/>
+                </div>
+                <div class="column-3">
+                  <img class="myImages" id="myImg" src="images/snap5.png" style="width:100%" />
+                </div>
+                <div class="column-3">
+                  <img class="myImages" id="myImg" src="images/snap6.png" style="width:100%" />
+                </div>
+                <div class="column-3">
+                  <img class="myImages" id="myImg" src="images/snap7.png" style="width:100%"/>
+                </div>
+                <div class="column-3">
+                  <img class="myImages" id="myImg" src="images/snap8.png" style="width:100%" />
+                </div>
+                <div class="column-3">
+                  <img class="myImages" id="myImg" src="images/snap9.png" style="width:100%" />
+                </div>
+                <div class="column-3">
+                  <img class="myImages" id="myImg" src="images/snap10.png" style="width:100%"/>
+                </div>
+                <div class="column-3">
+                  <img class="myImages" id="myImg" src="images/snap11.png" style="width:100%" />
+                </div>
+                <div class="column-3">
+                  <img class="myImages" id="myImg" src="" style="width:100%" />
+                </div>
+              </div>
+
+              <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img01">
+                <div id="caption"></div>
+              </div>
+ 
+            </div>
+           
+            <div class="row experience-title">
+              <div class="col-md-12">
+                <h3>Predicting Citation Counts of Papers in the Biomedical Literature</h3>
+                <p style="font-size: 1.8rem;">In this work, we presented methods to predict the citation count of a given publication before it is published. Unlike other research, we only need its textual information and its references to effectively decide whether it is going to be good publication. Additionally, there were other work that tries to predict the citation counts in various domains however they did not incorporate domain specific data for which we argued to have some important inclinations. Therefore, we also use biological data to enhance the prediction.</p>
+              </div>
+            </div>
+           
+            <div class="row experience-title">
+              <div class="col-md-10">
+                <h3>Awesome Data Privacy and Security</h3>
+                <h4>A curated list of data privacy and security resources <a href="https://github.com/yilmaztolga/awesome-data-privacy">
+                  <i class="devicon-github-original"></i></a></h4>
+                
+              </div>             
+            </div>
+          </div>
       </div>
     </div>
-    
-    
-    
-    
-  
-  
-  
-  
-   
+
   </body>
+  <script>
+   
+      var modal = document.getElementById('myModal');
+     
+      var images = document.getElementsByClassName('myImages');
+      
+      var modalImg = document.getElementById("img01");
+     
+      var captionText = document.getElementById("caption");
+
+      for (var i = 0; i < images.length; i++) {
+        var img = images[i];
+        img.onclick = function(evt) {
+          modal.style.display = "block";
+          modalImg.src = this.src;
+          captionText.innerHTML = this.alt;
+        }
+      }
+
+      var span = document.getElementsByClassName("close")[0];
+
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+  </script>
   </html>
